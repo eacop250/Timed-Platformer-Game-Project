@@ -27,21 +27,20 @@ public class movment : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
 
-        
-        
-        
+
+
+
         //bellow is what flips the charcter. Example: When running to the left, the character will now turn left rather than just running backwards. 
-        
-        if (Input.GetKey(KeyCode.RightArrow))
+
+        Vector3 characterScale = transform.localScale;
+        if (Input.GetAxis("Horizontal") < 0)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 0);
+            characterScale.x = -10;
         }
-        
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetAxis("Horizontal") > 0)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 180);
+            characterScale.x = 10;
         }
+        transform.localScale = characterScale;
     }
 }
