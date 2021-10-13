@@ -32,15 +32,15 @@ public class movment : MonoBehaviour
 
         //bellow is what flips the charcter. Example: When running to the left, the character will now turn left rather than just running backwards. 
 
-        Vector3 characterScale = transform.localScale;
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            characterScale.x = -10;
-        }
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            characterScale.x = 10;
-        }
-        transform.localScale = characterScale;
+        //Vector3 characterScale = transform.localScale;
+        //if (Input.GetAxis("Horizontal") < 0)
+        //{
+        //    characterScale.x = -10;
+        //}
+        //if (Input.GetAxis("Horizontal") > 0)
+        //{
+        //    characterScale.x = 10;
+        //}
+        //transform.localScale = characterScale;
     }
 }
